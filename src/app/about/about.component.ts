@@ -1,18 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
-import { environment } from '../../environments/environment';
+import {environment} from '../../environments/environment';
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+    selector: 'app-about',
+    templateUrl: './about.component.html',
+    styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
 
-  version: string = environment.version;
+    version: string = environment.version;
 
-  constructor() { }
+    results: string[];
 
-  ngOnInit() { }
+    // Inject HttpClient into your component or service.
+    constructor(private http: HttpClient) {
+    }
 
+    ngOnInit(): void {
+        // Make the HTTP request:
+        this.http.get('/api/post/list').subscribe(data => {
+            // Read the result field from the JSON response.
+            this.results = data['posts'];
+            console.log(this.results);
+        });
+    }
 }

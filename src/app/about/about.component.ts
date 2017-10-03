@@ -20,7 +20,7 @@ export class AboutComponent implements OnInit {
 
     ngOnInit(): void {
         // Make the HTTP request:
-        this.http.get('/api/post/list').subscribe(data => {
+        this.http.get('http://localhost:3000/api/post/list').subscribe(data => {
             // Read the result field from the JSON response.
             this.results = data['posts'];
             console.log(this.results);

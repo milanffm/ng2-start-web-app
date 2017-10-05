@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
 import {environment} from '../../environments/environment';
 
 @Component({
-    selector: 'app-about',
-    templateUrl: './about.component.html',
-    styleUrls: ['./about.component.scss']
+    selector: 'app-posts',
+    templateUrl: './posts.component.html',
+    styleUrls: ['./posts.component.scss']
 })
-export class AboutComponent implements OnInit {
+export class PostsComponent implements OnInit {
 
     version: string = environment.version;
 
@@ -21,7 +21,7 @@ export class AboutComponent implements OnInit {
 
     goToPost(slug: string) {
 
-        this.router.navigate(['/post/', slug]);
+        this.router.navigate(['/posts/', slug]);
 
     }
 

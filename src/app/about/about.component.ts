@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { Router } from '@angular/router';
 
 import {environment} from '../../environments/environment';
 
@@ -15,7 +16,13 @@ export class AboutComponent implements OnInit {
     results: string[];
 
     // Inject HttpClient into your component or service.
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private router: Router) {
+    }
+
+    goToPost(slug: string) {
+
+        this.router.navigate(['/post/', slug]);
+
     }
 
     ngOnInit(): void {

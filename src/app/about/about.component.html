@@ -8,7 +8,8 @@
         </p>
 
         <ul>
-            <li *ngFor="let post of results">
+            <li *ngFor="let post of results" (click)="goToPost( post.slug )">
+
                 <h2>{{ post.title }}</h2>
                 <div [innerHTML]="post.content.extended">
                 </div>

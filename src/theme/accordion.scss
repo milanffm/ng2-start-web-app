@@ -1,0 +1,64 @@
+.page {
+    .ui-accordion .ui-accordion-header {
+        a {
+            clear: both;
+            padding: 10px 0 7px 20px;
+            margin: 0;
+            text-transform: none;
+            font-size: 1.2rem;
+            outline: none;
+            border-top: #c6c6c6 solid 1px;
+            text-decoration: none;
+            color: #1a1a1a;
+            outline: none;
+            background: url(/assets/img/pfeile.png) no-repeat 0 6px;
+        }
+        &.ui-state-active a {
+            background: url(/assets/img/pfeile.png) no-repeat 0 -22px
+        }
+    }
+
+
+    #accordion h3 a:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    #accordion table {
+        margin: 15px 0 15px 20px;
+    }
+
+    #accordion table tr td {
+        border-top: #c6c6c6 solid 1px;
+        padding: 10px 0px;
+    }
+
+    #accordion div table td.td_1 {
+        width: 100px;
+    }
+
+    #accordion div table td.td_2 {
+        width: 74px
+    }
+
+    #accordion div table td.td_3 {
+        width: 120px
+    }
+
+    #accordion div table td.td_4 {
+        width: 120px
+    }
+
+    #accordion div table td.td_5 {
+        width: 120px
+    }
+
+    #accordion h3.ui-state-default {
+    }
+
+    #accordion h3.ui-state-active {
+
+    }
+
+}
+

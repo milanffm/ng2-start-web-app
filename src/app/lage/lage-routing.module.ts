@@ -3,12 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { Route } from '../core/route.service';
 import { extract } from '../core/i18n.service';
-import { PostsComponent } from './posts.component';
+import { LageComponent } from './lage.component';
 
 const routes: Routes = Route.withShell([
-  { path: 'posts', component: PostsComponent, data: { title: extract('Posts') } },
-  { path: 'posts/:slug', component: PostsComponent }
-
+  { path: 'lage', component: LageComponent, data: { title: extract('Lage') } }
 ]);
 
 @NgModule({
@@ -16,4 +14,4 @@ const routes: Routes = Route.withShell([
   exports: [RouterModule],
   providers: []
 })
-export class PostRoutingModule { }
+export class LageRoutingModule { }

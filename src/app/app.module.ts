@@ -11,7 +11,14 @@ import {AppRoutingModule} from './app-routing.module';
 import {CoreModule} from './core/core.module';
 import {SharedModule} from './shared/shared.module';
 import {HomeModule} from './home/home.module';
-import {PostsModule} from './posts/posts.module';
+
+import {LageModule} from './lage/lage.module';
+import {AusstattungModule} from './ausstattung/ausstattung.module';
+import {FinanzierungModule} from './finanzierung/finanzierung.module';
+import {KontaktModule} from './kontakt/kontakt.module';
+import {ObjektModule} from './objekt/objekt.module';
+import {WohnungenModule} from './wohnungen/wohnungen.module';
+
 
 @NgModule({
     imports: [
@@ -23,7 +30,12 @@ import {PostsModule} from './posts/posts.module';
         CoreModule,
         SharedModule,
         HomeModule,
-        PostsModule,
+        LageModule,
+        AusstattungModule,
+        FinanzierungModule,
+        KontaktModule,
+        ObjektModule,
+        WohnungenModule,
         AppRoutingModule
     ],
     declarations: [AppComponent],

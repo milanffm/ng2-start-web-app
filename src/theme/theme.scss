@@ -1,58 +1,462 @@
-/*
- * Global application theme.
- * Framework overrides and customization goes here.
- */
 
 @import "fonts";
 @import "elements";
+/* --------------------------------------------------------------
+   BASICS
+-------------------------------------------------------------- */
 
-
-html {
-    box-sizing: border-box;
-}
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
+/* Default font settings.
+   The font-size percentage is of 16px. (0.75 * 16px = 12px) */
 body {
-    background: $gray;
+    margin: 0;
+    padding: 0;
+    font-size: 89%;
+    color: #fff;
+    background: #434765;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
-html.home .navi a.home {color: $navi-hover-color;}
-html.salon .navi a.salon {color: $navi-hover-color;}
-html.attainment .navi a.attainment {color: $navi-hover-color;}
-html.lookbook .navi a.lookbook {color: $navi-hover-color;}
-html.products .navi a.products {color: $navi-hover-color;}
-html.team .navi a.team {color: $navi-hover-color;}
-html.prices .navi a.prices {color: $navi-hover-color;}
-html.jobs .navi a.jobs {color: $navi-hover-color;}
-html.contact .navi a.contact {color: $navi-hover-color;}
-
-/**
-GOOGLE MAPS
- */
-
-.agm-info-window-content {
-    color: $gray-dark;
+img {
+    border: none;
 }
 
-.link-magenta {
-    color: $brand-primary;
+/* Headings
+-------------------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin: 0;
+    color: #111;
+    text-transform: uppercase;
+}
+
+h1 {
+    padding: 0;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 0.3em;
+}
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1;
+    margin-bottom: 0.3em;
+}
+
+h4 {
+    font-size: 1.2em;
+    line-height: 1.25;
+    margin-bottom: 0.3em;
+}
+
+h5 {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
+
+h6 {
+    font-size: 0.8em;
+}
+
+h1 img, h2 img, h3 img,
+h4 img, h5 img, h6 img {
+    margin: 0;
+}
+
+/* Text elements
+-------------------------------------------------------------- */
+
+p {
+    margin: 0 0 1em;
+    line-height: 1.6em;
+}
+
+p img.left {
+    float: left;
+    margin: 1.5em 1.5em 1.5em 0;
+    padding: 0;
+}
+
+p img.right {
+    float: right;
+    margin: 1.5em 0 1.5em 1.5em;
+}
+
+a:focus,
+a:hover {
+    color: #b70718;
+}
+
+a {
+    color: #b70718;
+    text-decoration: none;
+}
+
+blockquote {
+    margin: 1.5em;
+    color: #666;
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em, dfn {
+    font-style: italic;
+}
+
+dfn {
+    font-weight: bold;
+}
+
+sup, sub {
+    line-height: 0;
+}
+
+abbr,
+acronym {
+    border-bottom: 1px dotted #666;
+}
+
+address {
+    margin: 0 0 1.5em;
+    font-style: italic;
+}
+
+del {
+    color: #666;
+}
+
+pre {
+    margin: 1.5em 0;
+    white-space: pre;
+}
+
+pre, code, tt {
+    font: 1em 'andale mono', 'lucida console', monospace;
+    line-height: 1.5;
+}
+
+/* Lists
+-------------------------------------------------------------- */
+
+ul, ol {
+    margin: 0 0.5em;
+    padding: 0 0 0.5em 1.5em;
+}
+
+li {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+dl {
+    margin: 0 0 0.5em 0;
+}
+
+dl dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-left: 1.5em;
+}
+
+/* Tables
+-------------------------------------------------------------- */
+
+table {
+    margin-bottom: 1.4em;
+}
+
+th {
+    font-weight: bold;
+}
+
+thead th {
+    background: #c3d9ff;
+}
+
+th, td, caption {
+    padding: 4px 10px 4px 0;
+    vertical-align: top;
+    line-height: 1.6em;
+}
+
+tr.even td {
+    background: #e5ecf9;
+}
+
+tfoot {
+    font-style: italic;
+}
+
+caption {
+    background: #eee;
+}
+
+/* Misc classes
+-------------------------------------------------------------- */
+
+.small {
+    font-size: .8em;
+    margin-bottom: 1.875em;
+    line-height: 1.875em;
+}
+
+.large {
+    font-size: 1.2em;
+    line-height: 2.5em;
+    margin-bottom: 1.25em;
+}
+
+.hidden {
+    display: none;
+}
+
+.quiet {
+    color: #666;
+}
+
+.loud {
+    color: #000;
+}
+
+/* --------------------------------------------------------------
+  H1 Replace Logo und Beschreibung
+-------------------------------------------------------------- */
+h1 {
+    background: url(/assets/img/layout/logo-mitten-in-frankfurt.png) no-repeat scroll 0 -10px transparent;
+    height: 78px;
+    width: 550px;
+    padding: 0;
+    margin-top: 10px;
+    position: absolute;
+    text-indent: -9999px;
+}
+
+div#branding blockquote {
+    position: absolute;
+    top: -9999px;
+}
+
+/* --------------------------------------------------------------
+   LAYOUT
+-------------------------------------------------------------- */
+
+#page {
+    max-width: 755px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+#navi {
+    max-width: 755px;
+    height: 30px;
+    padding: 35px 0 0 15px;
+}
+
+#branding {
+    height: 115px;
+    width: 750px;
+}
+
+#left-col {
+    float: left;
+    width: 210px;
+    margin-left: -990px;
+    margin-top: 35px;
+    padding: 0 10px 10px 20px;
+}
+
+#content {
+    clear: both;
+    float: left;
+    max-width: 755px;
+    padding: 30px;
+    min-height: 350px;
+    background: url(/assets/img/layout/bg_content.png) repeat-y;
+}
+
+#footer {
+    clear: both;
+    padding: 30px;
+    margin-left: 240px;
+    height: 44px;
 }
 
 
-@media all and (max-width: $large-screen) {
+div#navi {
+    font-weight: bold;
+}
 
-    body.menu-open {
-        .navi {
-            right: 0;
-        }
-        .inner-content {
-            transform: translate(-$navi-width, 0px);
-        }
+div#navi a {
+    color: #181818;
+    text-decoration: none;
+}
 
-        .toggle-button {
-            transform: translate(-$navi-width, 0px);
-        }
-    }
+div#navi a:focus,
+div#navi a:hover {
+    color: #b70718;
+    text-decoration: none;
+}
+
+div#navi ul {
+    padding: 0;
+    list-style: none;
+}
+
+div#navi ul li {
+    padding-top: 5px;
+    font-size: 1.14em;
+    float: left; /* ohne width - nach CSS 2.1 erlaubt */
+    position: relative;
+}
+
+div#navi ul li ul {
+    margin: 0;
+    padding: 5px 0 0 0;
+    position: absolute;
+    display: none; /* Unternavigation ausblenden */
+    background: url(/assets/img/layout/bg_sub_navi.gif) repeat-x;
+
+}
+
+*:first-child + html div#navi ul ul { /* Workaround fuer den IE 7 */
+    padding-bottom: 0.4em;
+}
+
+div#navi ul li:hover ul {
+    display: block; /* Unternavigation in modernen Browsern einblenden */
+
+}
+
+div#navi ul li ul li {
+    float: none;
+    display: block;
+    margin-bottom: 0.5em;
+    width: 300px;
+
+}
+
+div#navi ul a {
+    display: block;
+    padding: 0 10px 0 10px;
+}
+
+
+
+div#content-left {
+    float: left;
+    width: 455px;
+    padding-right: 15px;
+}
+
+div#content-right {
+    float: left;
+    width: 220px;
+}
+
+img.img_3er_1 {
+    float: left;
+    margin-top: 15px;
+}
+
+img.img_3er_2 {
+    float: left;
+    margin: 15px 0 0 15px;
+}
+
+a.fadenkreuz:focus,
+a.fadenkreuz:hover {
+    color: #b70718;
+    background: url(/assets/img/layout/fadenkreuz.gif) right no-repeat;
+    outline: none;
+}
+
+a.fadenkreuz {
+    color: #181818;
+    padding: 15px 47px 10px 0;
+    background: url(/assets/img/layout/fadenkreuz_ina.gif) right no-repeat;
+    outline: none;
+}
+
+/* --------------------------------------------------------------
+  Accordion
+-------------------------------------------------------------- */
+
+#accordion h3 {
+    clear: both;
+    padding: 13px 0 7px 20px;
+    margin: 0;
+    text-transform: none;
+    font-size: 1.1em;
+    margin: 0;
+    outline: none;
+    border-top: #c6c6c6 solid 1px;
+}
+
+#accordion p {
+    margin: 0;
+}
+
+#accordion h3 a {
+    text-decoration: none;
+    color: #1a1a1a;
+    outline: none;
+}
+
+#accordion h3 a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#accordion table {
+    margin: 15px 0 15px 20px;
+}
+
+#accordion table tr td {
+    border-top: #c6c6c6 solid 1px;
+    padding: 10px 0px;
+}
+
+#accordion div table td.td_1 {
+    width: 100px;
+}
+
+#accordion div table td.td_2 {
+    width: 74px
+}
+
+#accordion div table td.td_3 {
+    width: 120px
+}
+
+#accordion div table td.td_4 {
+    width: 120px
+}
+
+#accordion div table td.td_5 {
+    width: 120px
+}
+
+#accordion h3.ui-state-default {
+    background: url(/assets/img/pfeile.png) no-repeat 0 3px
+}
+
+#accordion h3.ui-state-active {
+    background: url(/assets/img/pfeile.png) no-repeat 0 -25px
 }

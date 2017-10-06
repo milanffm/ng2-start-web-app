@@ -10,6 +10,8 @@ export class WohnungenComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+
   }
 
 }

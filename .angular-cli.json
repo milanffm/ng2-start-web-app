@@ -20,9 +20,16 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "main.scss"
+        "main.scss",
+        "vendor/lightbox/lightbox.css",
+        "./../node_modules/primeng/resources/primeng.min.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "vendor/jquery-1.7.1.js",
+        "vendor/jquery-ui-1.8.18.custom.min.js",
+        "vendor/jquery.smooth-scroll.min.js",
+        "vendor/lightbox/lightbox.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

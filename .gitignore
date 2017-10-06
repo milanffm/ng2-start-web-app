@@ -5,3 +5,4 @@ node-modules/
 .idea/
 www-old/
 www
+npm-debug.log

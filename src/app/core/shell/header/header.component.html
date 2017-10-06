@@ -1,28 +1,20 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="https://github.com/ngx-rocket" translate>APP_NAME</a>
-
-    <div id="navbar-menu" class="collapse navbar-collapse float-xs-none" [ngbCollapse]="menuHidden">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link text-uppercase" routerLink="/home" routerLinkActive="active">
-          <i class="fa fa-home"></i>
-          <span translate>Home</span>
-        </a>
-        <a class="nav-item nav-link text-uppercase" routerLink="/posts" routerLinkActive="active">
-          <i class="fa fa-question-circle"></i>
-          <span translate>Posts</span>
-        </a>
-      </div>
-      <div class="navbar-nav ml-auto">
-        <div class="nav-item" ngbDropdown placement="bottom-right">
-          <a id="language-dropdown" class="nav-link" ngbDropdownToggle>{{currentLanguage}}</a>
-          <div ngbDropdownMenu aria-labelledby="language-dropdown">
-            <button class="dropdown-item" *ngFor="let language of languages" (click)="setLanguage(language)">
-              {{language}}
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <div id="navi">
+    <ul id="Navigation">
+      <li><a id="lage" routerLink="lage" href="/lage">Lage</a></li>
+      <li><a id="objekt" routerLink="objekt" href="/objekt">Objekt</a></li>
+      <li><a id="wohnungen" routerLink="wohnungen" href="/wohnungen">Wohnungen</a></li>
+      <li><a id="ausstattung" routerLink="ausstattung" href="/ausstattung">Ausstattung</a></li>
+      <li><a id="kontakt" routerLink="kontakt" href="/kontakt">Kontakt</a></li>
+      <li><a id="finanzierung" routerLink="finanzierung" href="/finanzierung">Finanzierung</a></li>
+    </ul>
+  </div>
+  <div id="branding" >
+    <h1 style="cursor: pointer;" routerLink="/" >Mitten in Frankfurt – Eigentumswohnungen in Frankfurt Bockenheim</h1>
+    <blockquote>
+      in Ihrer nächsten Nachbarschaft, der Rödelheimer Landstraße entstehen ab Sommer diesen Jahres sehr schöne,
+      hochwertige Eigentumswohnungen für Kapitalanleger und Selbstnutzer.<br /><br />
+      Die eleganten Wohnungen werden mit grosse Preis-Leistungsverhältnis.
+    </blockquote>
+  </div>
 </header>

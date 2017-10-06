@@ -256,7 +256,7 @@ div#branding blockquote {
    LAYOUT
 -------------------------------------------------------------- */
 
-#page {
+.page {
     max-width: 755px;
     width: 100%;
     margin: 0 auto;
@@ -294,7 +294,6 @@ div#branding blockquote {
 #footer {
     clear: both;
     padding: 30px;
-    margin-left: 240px;
     height: 44px;
 }
 

@@ -65,7 +65,7 @@ export class HttpService extends Http {
                 headers: response.headers,
                 statusText: response.statusText,
                 type: response.type,
-                url: response.url
+                url: response.url,
               }));
               subscriber.next(response);
             },
@@ -116,9 +116,11 @@ export class HttpService extends Http {
 
   // Customize the default behavior for all http requests here if needed
   private httpRequest(request: string|Request, options: RequestOptionsArgs): Observable<Response> {
-    let req = super.request(request, options);
+    const req = super.request(request, options);
     if (!options.skipErrorHandler) {
-      req = req.catch(error => this.errorHandler(error));
+      log.error('httpRequest crashed');
+      // todo find a way to handle this error handling write
+      // error => this.errorHandler(error);
     }
     return req;
   }

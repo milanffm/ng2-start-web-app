@@ -57,20 +57,20 @@ export class HttpService extends Http {
           subscriber.complete();
         } else {
           this.httpRequest(request, options).subscribe(
-            (response: Response) => {
-              // Store the serializable version of the response
-              this.httpCacheService.setCacheData(url, null, new ResponseOptions({
-                body: response.text(),
-                status: response.status,
-                headers: response.headers,
-                statusText: response.statusText,
-                type: response.type,
-                url: response.url,
-              }));
-              subscriber.next(response);
-            },
-            (error) => subscriber.error(error),
-            () => subscriber.complete()
+              (response: Response) => {
+                // Store the serializable version of the response
+                this.httpCacheService.setCacheData(url, null, new ResponseOptions({
+                  body: response.text(),
+                  status: response.status,
+                  headers: response.headers,
+                  statusText: response.statusText,
+                  type: response.type,
+                  url: response.url
+                }));
+                subscriber.next(response);
+              },
+              (error) => subscriber.error(error),
+              () => subscriber.complete()
           );
         }
       });
@@ -116,11 +116,9 @@ export class HttpService extends Http {
 
   // Customize the default behavior for all http requests here if needed
   private httpRequest(request: string|Request, options: RequestOptionsArgs): Observable<Response> {
-    const req = super.request(request, options);
+    let req = super.request(request, options);
     if (!options.skipErrorHandler) {
-      log.error('httpRequest crashed');
-      // todo find a way to handle this error handling write
-      // error => this.errorHandler(error);
+      req = req.catch(error => this.errorHandler(error));
     }
     return req;
   }

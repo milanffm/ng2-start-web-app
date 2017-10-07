@@ -21,9 +21,9 @@ export class QuoteService {
 
   getRandomQuote(context: RandomQuoteContext): Observable<string> {
     return this.http.get(routes.quote(context), { cache: true })
-      .map((res: Response) => res.json())
-      .map(body => body.value)
-      .catch(() => Observable.of('Error, could not load joke :-('));
+        .map((res: Response) => res.json())
+        .map(body => body.value)
+        .catch(() => Observable.of('Error, could not load joke :-('));
   }
 
 }
